@@ -1,0 +1,13 @@
+baseURL: 'http://example.org/'
+languageCode: 'en-us'
+title: 'Ravenswood Canada'
+theme: ['hello-friend-ng', 'hugo-easy-gallery']
+
+rss: true
+
+markup:
+  goldmark:
+    renderer:
+      unsafe: true
+
+summaryLength: 30

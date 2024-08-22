@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="{{ .Site.Language }}">
+    <head>
+        {{ partial "head.html" . }}
+    </head>
+
+    {{ block "body" . }}
+    <body class="{{ .Params.type }}">
+        
+    {{ end }}
+    {{- partial "burger-menu.html" . }}
+        <div class="container">
+            {{ block "header" . }}{{ end }}
+            <div class="navbar">
+                <div class="nav-wrapper" id="home">
+                    {{- partial "rw-nav.html" . }}
+                   
+                </div>
+            </div>
+            {{- partial "floatingbookbutton.html"}}
+
+            <div class="content">
+                {{ block "main" . }}{{ end }}
+            </div>
+        </div>
+        {{ block "footer" . }}
+                {{ partial "footer.html" . }}
+            {{ end }}
+
+        {{ partial "load-photoswipe" }}
+    </body>
+</html>

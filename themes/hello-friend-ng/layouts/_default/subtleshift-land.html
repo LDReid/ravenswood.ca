@@ -1,0 +1,65 @@
+{{ define "header" -}}
+<div class="hero-header-ss">
+    <div class="logos">
+        <img src="/images/Subtle-shift-raw-white.png" alt="ravenswood" id="rw">
+    </div>
+    </div>
+{{ end -}}
+
+{{ define "main" -}}
+    </div>
+    <div class="wrapper-rw">
+        <div class="head-grid">
+            <div class="head-div-rw">
+                <header>
+                    <h1>The Subtle Shift</h1>
+                    <h2>REIKI, LIGHT LANGUAGE, & ANGELS</h2>
+                </header>
+            </div>
+            <span id="ss-spanclr1"></span>
+            <span id="ss-spanclr2"></span>
+            <div id="ss-thumb"></div>
+        </div>
+        <div class="main-flex">
+                <main class="subtle-shift">
+                    <article id="bunkie-article">
+                        {{.Content }}
+                    </article>
+                </main>
+            <div class="sidebar">
+                <h3 id="first-side-bar-list">Services</h3>
+                <div>
+                    <ul class="subtle-shift-li">
+                        <li id="reiki">
+                            <a href="https://thesubtleshift.ca/our-services/" target="_blank">Reiki Healing</a>
+                        </li>
+                        <li id="light-language">
+                            <a href="https://thesubtleshift.ca/our-services/" target="_blank">Light language</a>
+                        </li>
+                        <li id="soul-journey">
+                            <a href="https://thesubtleshift.ca/our-services/" target="_blank">Soul journey sessions</a>
+                        </li>
+                        <li id="soul-discovery">
+                            <a href="https://thesubtleshift.ca/our-services/" target="_blank">Soul discovery sessions</a>
+                        </li>
+                        <li id="oracle-card">
+                            <a href="https://thesubtleshift.ca/our-services/" target="_blank">Oracle card readings</a>
+                        </li>
+                        <li id="group-exp">
+                            <a href="https://thesubtleshift.ca/our-services/" target="_blank">Group experiences</a>
+                        </li>
+                    </ul>
+                </div>
+                {{- partial "sidebar-content.html" . }}
+                <div class="reviews">
+                    <h3><a href="https://www.airbnb.ca/rooms/50920160/reviews?guests=1&adults=1&s=67&unique_share_id=ee719e53-a42c-4e05-b739-68624bf64f2b&locale=en&_set_bev_on_new_domain=1714759048_ZGEyZjRkZjZjZWMw&source_impression_id=p3_1714764031_kxUb1TWU7ICp0pdc">AirBnB Reviews</a></h3>
+                            <script src="https://apps.elfsight.com/p/platform.js" defer></script>
+                                        <div class="elfsight-app-5f21b30d-bdb1-473c-8dd9-a3ab2ab64ee5"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="main.js"></script>
+
+
+{{- end }}

@@ -1,0 +1,38 @@
+                <h3 id="first-side-bar-list"><a href="/blog">Blogs</a></h3>
+                <ul>
+                    {{- $blogPages := where .Site.Pages "Section" "Blog" -}}
+                    {{- range first 4 $blogPages -}}
+                        <li>
+                            {{- if .Param "datesinlist" }}<time datetime="{{ .Date.Format "2006-01-02T15:04:05Z07:00" }}">{{ .Date.Format "1/02/06" }}</time> &ndash; {{ end -}}
+                            <a href="{{ .RelPermalink }}">{{ .Title }}</a>
+                        </li>
+                    {{- end }}
+                    <li><a href="/blog">Read more...</a></li>
+                </ul>
+                <h3 class="local-guide-sidebar"><!--<a href="/local-guide" >Local Guide </a>-->Local Guide <span><img src="/images/nd01-icon-coming-soon.gif" alt="" style="display: inline-block;"></span></h3>
+                <ul>
+                    {{- $guidePages := where .Site.Pages "Section" "Local Guide" -}}
+                    {{- range first 4 $guidePages -}}
+                        <li class="local-guide-sidebar">
+                            {{- if .Param "datesinlist" }}<time datetime="{{ .Date.Format "2006-01-02T15:04:05Z07:00" }}">{{ .Date.Format "1/02/06" }}</time> &ndash; {{ end -}}
+                            <!--<a href="{{ .RelPermalink }}">{{ .Title }}</a>-->{{ .Title }}
+                        </li>
+                    {{- end }}
+                    <li class="local-guide-sidebar"><!--<a href="/local-guide">Read more...</a>-->Read more...</li>
+                </ul>
+                <h3><a href="/galleries">Galleries</a></h3>
+                <ul>
+                    {{- $blogPages := where .Site.Pages "Section" "Galleries" -}}
+                    {{- range first 4 $blogPages -}}
+                    <li>
+                        {{- if .Param "datesinlist" }}<time datetime="{{ .Date.Format "2006-01-02T15:04:05Z07:00" }}">{{ .Date.Format "1/02/06" }}</time> &ndash; {{ end -}}
+                        <a href="{{ .RelPermalink }}">{{ .Title }}</a>
+                        {{- if .Param "authorsinlist" }}
+                        {{ with .Params.authors }}
+                            by 
+                            {{ delimit . ", " " and " }}
+                        {{end}}
+                        {{ end -}}
+                    </li>
+                {{- end }}
+                </ul>

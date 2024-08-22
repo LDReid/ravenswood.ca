@@ -1,0 +1,48 @@
+<!--<div class="signup-form-sidebar">
+    <form action="">
+        <label for="email">E-mail address</label>
+        <input type="text" id="email" name="email" placeholder="e.g. liam@ravenswood.ca"> 
+        
+        <div>
+            <input type="submit">
+        </div>
+    </form>
+</div>-->
+<div class="signup-form-sidebar">
+    <h3>Sign Up for Our Newsletter</h3>
+    <form id="newsletterForm">
+        <div class="form-group">
+            <input type="email" id="email" name="email" placeholder="e.g. liam@ravenswood.ca" required>
+            <button type="submit">Sign Up</button>
+        </div>
+    </form>
+    <div class="message" id="message"></div>
+</div>
+
+<script>
+    document.getElementById('newsletterForm').addEventListener('submit', async function(event) {
+        event.preventDefault();
+    
+        const email = document.getElementById('email').value;
+        const messageDiv = document.getElementById('message');
+    
+        const response = await fetch('https://connect.mailerlite.com/api/subscribers', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+                'Accept': 'application/json',
+                'Authorization': 'Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiI0IiwianRpIjoiMTVmOGM0MDZhMGQ4OTIwZDMyZGFjODVkNDdlODlmZTAyMDg1MTY3NGE5MjA5ZTRlOTU5ZjY5MzEwOWY4YWM4MWYxZWUyMWU3NzUyNmM4MTYiLCJpYXQiOjE3MTg5OTY2NzMuMDc2Njc5LCJuYmYiOjE3MTg5OTY2NzMuMDc2NjgxLCJleHAiOjQ4NzQ2NzAyNzMuMDc0MjczLCJzdWIiOiIxMDAzOTc4Iiwic2NvcGVzIjpbXX0.iBe46XCY22IQwjnroLWx8PL8rr2oxOJwmsw2EPg5Bbbl8gnH3eyP0dZwRfj9OBG1DFZ6jrEe2hJjm-mACKYIoT4_TfXNsegGd5Wc0SxpOZgzcACPRxwKaqBkd9g8ALfwIgDa4_YJqI_zghiFCn9CSIzackdwwgejWkWsN5Eguz-uHzrsHhP-bGC7VKXlYU6G0PBWTf099sCr8ui4ii54bqZUcdz4a9Lgts7OVzkdsBjOLtEnOCRIam7pmKi8zM3iXYtxSAyBgcQd0QwQOBAOVWvRG9qwW7Pk4PKltB3rtet7CSdm9d-6n14t2x44QC7u5CB0wWQt4eR6WCw245QfMkv51Li59u4eeO4k8qVLSEAZF5e29vun73kq96EmIzFUuh0K5wtxDs2AuuXdgcF5jHxissEWXyraLjFHbW3sEzyRWlDTUhq84t_p3avrPskOhqpp31dZ2MtENAr6u9AQTSrQ23-LLEqGho_eroEgdtAZSzw37Kpc6bsGz1eU0LIMJq04vi_dso21zILkQX8F4jWD_8Rdj1771OnonxMHqdnJf5JW158BgSTRrLcxH2JgG-VxXQ5gD-4DzN1tmV9GAJu1bog44kd8_iz5Hb_NBtVQlNieulz0JVBbnPKDIGeG_X0jfi5PAyNfWCnZ-rW2vHnDGQRSEB8Y8oy6-DvoGRs'
+            },
+            body: JSON.stringify({ email: email })
+        });
+    
+        if (response.ok) {
+            messageDiv.textContent = 'Thank you for signing up!';
+            messageDiv.style.color = 'green';
+        } else {
+            const data = await response.json();
+            messageDiv.textContent = data.message || 'There was an error signing you up.';
+            messageDiv.style.color = 'red';
+        }
+    });
+    </script>

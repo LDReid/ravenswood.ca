@@ -1,0 +1,51 @@
+{{ define "main" }}
+    {{ $paginator := .Paginate .Data.Pages }}
+    <main class="wrapper-rw">
+        <h1 class="list-title">{{ .Title }}</h1>
+
+        {{ if .Content }}
+            <div class="content">{{ .Content }}</div>
+        {{ end }}
+
+        {{ range $paginator.Pages.GroupByDate "2006" }}
+            <div class="list-group">
+                <h2 class="list-year">{{ .Key }}</h2>
+
+                <ul class="list-list">
+                    {{ range .Pages }}
+                        <li class="list-item">
+                            <span class="list-day">
+                                    {{ .Date.Format "01/2/06"}}
+                                    {{ if eq .Date (index .Site.RegularPages.ByDate.Reverse 0).Date }}
+                                        <span style="display: inline-block;"><img src="/images/nd01-icon-new.gif" alt=""></span>
+                                    {{ end }}
+                            </span>
+                            <br>
+                            <a href="{{.Permalink}}" class="list-item-inner">
+                                <span class="entry-title">{{.Title}}</span>
+                                {{ if .Params.Cover }}
+                                <img src="{{ print .Params.Cover }}" alt="" class="entry-img">
+                                {{ end }}
+                            </a>
+                            {{ if ne .Params.type "photo-gallery" }}
+                            <div class="entry-summary">
+                                {{ .Summary }}
+                                {{ if .Truncated }}
+                                <span>
+                                    <a href="{{ .RelPermalink }}">Read More…</a>
+                                </span>
+                                {{ end }}
+                            </div>
+                        {{ end }}
+                        </li>
+                    {{ end }}
+                </ul>
+            </div>
+        {{ end }}
+    {{ partial "pagination-list.html" . }}
+    <hr>
+    {{- partial "formsignup.html" . }}
+    <p>Stay up to date on all of the latest news and articles from Ravenswood by joining our newsletter. Absolutely free and guaranteed to spark joy. </p>
+    <hr>
+    </main>
+{{ end }}

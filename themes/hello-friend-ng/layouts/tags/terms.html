@@ -1,0 +1,25 @@
+{{ define "main" }}
+    {{ $paginator := .Paginate .Data.Pages }}
+    <main class="wrapper-rw">
+        <h1 class="list-title">{{ .Title }}</h1>
+
+        {{ if .Content }}
+            <div class="content">{{ .Content }}</div>
+        {{ end }}
+
+        {{ range $paginator.Pages.GroupByDate "2006" }}
+            <div class="term-group">
+                <ul class="term-list">
+                    {{ range .Pages }}
+                        <li class="term-item">
+                            <a href="{{.Permalink}}" class="term-item-inner">
+                                <span>#{{.Title}}</span>
+                            </a>
+                        </li>
+                    {{ end }}
+                </ul>
+            </div>
+        {{ end }}
+    {{ partial "pagination-list.html" . }}
+    </main>
+{{ end }}

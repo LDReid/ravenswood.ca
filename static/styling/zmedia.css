@@ -1,0 +1,80 @@
+:root {
+    --wrapper-padding: 0px 25px 25px 25px;
+    --list-wrapper-padding: 25px 25px 25px 25px;
+    --nav-wrapper-padding: 0px 25px 0px 25px;
+	--gap: 20px;
+    --offwhite: #fffefa;
+    --darktan: #d1c9bb;
+    --shadow: #d4d0c9;
+    --darkgreen: #17261d;
+    --bg: #ebe7dc;
+    --warm-grad: linear-gradient(0deg, rgba(230,219,196,1) 0%, #fffefa 60%);
+    --text: #47433c;
+    --border: #9a9387;
+    --ravenred: #802222;
+    --page-width:950px;
+    --linkhover:#cc1105;
+    --ss-green: #4d9630;
+  }
+
+@font-face {
+    font-family: roycroft_initials;
+    src: url(/fonts/Roycroft-Initials.woff);
+}
+@font-face {
+    font-family: just_left_hand;
+    src: url(/fonts/JustLeftHand-Web.woff);
+}
+
+@media screen and (max-width: 700px){
+    :root{
+        --wrapper-padding:0px 10px 10px 10px;
+        --list-wrapper-padding:10px 10px 10px 10px;
+        --nav-wrapper-padding:0px 10px 0px 10px;
+        --gap: 10px;
+    }
+	/*.nav-grid {display:flex; justify-content: space-around;}*/
+    #burger-menu{display: block;}
+    #main-rw-nav{display: none;}
+    #Bookbuttonscroll { right: 20px;}
+    .index-nav{display: none;}
+	.head-grid {grid-template-columns:auto;}
+	.main-flex {display: block;}
+	.logos img {max-width:280px;}
+	.sidebar ul {display:grid; grid-template-columns: 1fr 1fr;}
+    .options {grid-template-columns: 1fr;}
+    #op-single{ gap: 0px;}
+    .bookmark {margin-right:25px;}
+    .reviews {width:100%;}
+    .navbar{display: none;}
+    .wrapper-blog{margin-top:var(--gap)}
+    .container{padding-top: 39px;}
+    #thumb{display: none;}
+}
+@media screen and (max-width: 535px){
+	#social-nav {display: none;}
+    .sidebar ul {display: block;}
+}
+@media screen and (min-width: 701px){
+    #overlay-menu{display: none !important;}
+}
+
+.blog{
+    background: var(--darktan);
+    background-image: url(/images/floral-bg-pattern052_4_r2.gif);
+}
+.info{
+    background: var(--bg);
+    background-image: url(/images/info-bg.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.photo-gallery{
+    background: var(--darktan);
+    background-image: url(/images/leafwallpaper.gif);
+}
+
+.subtleshift{
+    
+}

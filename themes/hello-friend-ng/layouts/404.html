@@ -1,0 +1,14 @@
+{{ define "main" }}
+<div class="wrapper-rw">
+    <div class="fourohfour">
+            <h1>404</h1>
+            <img src="/images/devo.jpg" alt="">
+            <p>{{ i18n "notFound" }}</p>
+            <p class="btn-404">
+                <a href="{{.Site.BaseURL}}">
+                  {{- i18n "home" -}}
+                </a>
+            </p>
+    </div>
+</div>
+{{ end }}

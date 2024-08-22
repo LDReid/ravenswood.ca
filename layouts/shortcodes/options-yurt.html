@@ -1,0 +1,19 @@
+<div class="options" id="op-single">
+    <div><a href="{{.Permalink}}"><img src="/images/liam-in-yurt.jpg" class="op-img"></a></div>
+    <div>
+        {{ with .GetPage "/blog/the-yurt" }}
+        <h4>Community Gathers</h4>
+        <h3>
+            {{.Title}}
+        </h3>
+        <div class="entry-summary" style="margin-block:10px; margin-right:10px;">
+            {{ .Summary }}
+            {{ if .Truncated }}
+            <span>
+                <a href="{{ .RelPermalink }}">Read More…</a>
+            </span>
+            {{ end }}
+        </div>
+        {{ end }}
+    </div>
+</div>

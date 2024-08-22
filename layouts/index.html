@@ -1,0 +1,49 @@
+{{ define "header" -}}
+<div class="hero-header">
+    <div class="logos">
+        <img src="images/raven-minimal-roughedge-white1x1_r1.png" alt="ravenswood" id="rw">
+    </div>
+    </div>
+{{ end -}}
+
+{{ define "main" -}}
+    </div>
+    <div class="wrapper-rw">
+        <div class="head-grid">
+            <div class="head-div-rw">
+                <header>
+                    <h1>Welcome to Ravenswood Canada</h1>
+                    <h2>EXPERIENCES & TRANSFORMATIONS</h2>
+                </header>
+            </div>
+            <span id="spanclr1"></span>
+            <span id="spanclr2"></span>
+            <div id="thumb"><span>Picture of the month</span></div>
+        </div>
+        <div class="main-flex">
+                <main>
+                    <div>
+                        <article id="rw-article">
+                            {{.Content }}
+                        </article>
+                    </div>
+                    
+                    <!--<iframe width="100%" height="120" src="https://player-widget.mixcloud.com/widget/iframe/?hide_cover=1&light=1&feed=%2FNTSRadio%2Funder-sleepy-moon-8th-june-2021%2F" frameborder="0" ></iframe>-->
+                    <!--{{ partial "radio.html" . }}-->
+                </main>
+                
+            <div class="sidebar">
+                {{- partial "formsignup.html" . }}
+                {{- partial "sidebar-content.html" . }}
+                <div class="reviews">
+                    <h3><a href="https://www.airbnb.ca/rooms/50920160/reviews?guests=1&adults=1&s=67&unique_share_id=ee719e53-a42c-4e05-b739-68624bf64f2b&locale=en&_set_bev_on_new_domain=1714759048_ZGEyZjRkZjZjZWMw&source_impression_id=p3_1714764031_kxUb1TWU7ICp0pdc">AirBnB Reviews</a></h3>
+                            <script src="https://apps.elfsight.com/p/platform.js" defer></script>
+                                        <div class="elfsight-app-5f21b30d-bdb1-473c-8dd9-a3ab2ab64ee5"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="main.js"></script>
+
+
+{{- end }}
